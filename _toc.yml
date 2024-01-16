@@ -1,0 +1,20 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: Google Cloud Shell
+    chapters:
+    - file: cloud_shell/index
+      sections:
+      - file: cloud_shell/connect_github
+  - caption: JavaScript Review
+    chapters:
+    - file: javascript/index
+      sections:
+      - file: javascript/arrow_functions
+      - file: javascript/express_modules
+  - caption: Google Cloud Functions
+    chapters:
+    - file: cloud_functions/index
