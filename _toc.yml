@@ -8,13 +8,16 @@ parts:
     chapters:
     - file: cloud_shell/index
       sections:
-      - file: cloud_shell/connect_github
+      - file: cloud_shell/1_configure_shell
+      - file: cloud_shell/2_github
+      - file: cloud_shell/3_connect_github
   - caption: JavaScript Review
     chapters:
     - file: javascript/index
       sections:
-      - file: javascript/arrow_functions
-      - file: javascript/express_modules
+      - file: javascript/1_arrow_functions
+      - file: javascript/2_test_arrow_functions
+      - file: javascript/3_node_modules
   - caption: Google Cloud Functions
     chapters:
     - file: cloud_functions/index
