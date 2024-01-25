@@ -21,3 +21,11 @@ parts:
   - caption: Google Cloud Functions
     chapters:
     - file: cloud_functions/index
+  - caption: Git & GitHub
+    chapters:
+    - file: git_github/index
+      sections:
+      - file: git_github/1_git_init.md
+      - file: git_github/2_github_remote.md
+      - file: git_github/3_add_commit_push.md
+    - file: git_github/4_branching.md
