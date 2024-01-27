@@ -26,8 +26,15 @@ parts:
       - file: git_github/2_github_remote.md
       - file: git_github/3_add_commit_push.md
     - file: git_github/4_branching.md
+  - caption: Google Cloud Project
+    chapters:
+    - file: cloud_project/index
+      sections:
+      - file: cloud_project/1_create_cloud_project.md
   - caption: Google Cloud Functions
     chapters:
     - file: cloud_functions/index
       sections:
-      - file: cloud_functions/1_create_function.md
+      - file: cloud_functions/1_create_http_function.md
+      - file: cloud_functions/2_test_http_function.md
+      - file: cloud_functions/3_deploy_http_function.md

@@ -46,7 +46,7 @@ node helloCloud.js
 
 You should see the output, `Hello, cloud!` in the terminal window. (This is where `console.log` statements will appear in the Cloud Shell.)
 
-(javascript:test_functions:write_code)=
+(javascript:test_functions:write_arrow_functions)=
 ## Write Arrow Functions in a JavaScript File
 
 For practice, let's create another JavaScript file that demonstrates the evolution of a JavaScript function from "basic" to "arrow".

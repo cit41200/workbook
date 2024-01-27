@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Create a Cloud Function &#8212; CIT 41200 Workbook</title>
+    <title>Deploy an HTTP-Triggered Cloud Function &#8212; CIT 41200 Workbook</title>
   
   
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -62,10 +61,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'cloud_functions/1_create_function';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cloud_functions/3_deploy_http_function';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Google Cloud Functions" href="index.html" />
+    <link rel="prev" title="Test an HTTP-Triggered Cloud Function" href="2_test_http_function.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -76,15 +75,6 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -193,10 +183,19 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../git_github/4_branching.html">Branching in Git</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Google Cloud Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cloud_project/index.html">Google Cloud Projects</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cloud_project/1_create_cloud_project.html">Create a Cloud Project in the Google Cloud Platform</a></li>
+</ul>
+</li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Google Cloud Functions</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Google Cloud Functions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Create a Cloud Function</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Google Cloud Functions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1_create_http_function.html">Create an HTTP-Triggered Cloud Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_test_http_function.html">Test an HTTP-Triggered Cloud Function</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Deploy an HTTP-Triggered Cloud Function</a></li>
 </ul>
 </li>
 </ul>
@@ -270,7 +269,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcloud_functions/1_create_function.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcloud_functions/3_deploy_http_function.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -300,7 +299,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/cloud_functions/1_create_function.md" target="_blank"
+      <li><a href="../_sources/cloud_functions/3_deploy_http_function.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -354,10 +353,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
 `);
 </script>
@@ -365,7 +364,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
 </script>
@@ -382,7 +381,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Create a Cloud Function</h1>
+    <h1>Deploy an HTTP-Triggered Cloud Function</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -392,9 +391,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-local-development-environment">Create a Local Development Environment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-the-functions-framework">Install the Functions Framework</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#invoke-the-function-locally">Invoke the Function Locally</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-your-cloud-shell-to-your-google-cloud-project">Connect Your Cloud Shell to your Google Cloud Project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deploy-the-cloud-function-to-the-gcp-project">Deploy the Cloud Function to the GCP Project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-cloud-build-and-cloud-function-apis">Enable Cloud Build and Cloud Function APIs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-your-cloud-function-at-the-provided-url">Test Your Cloud Function at the Provided URL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#view-cloud-function-logs">View Cloud Function Logs</a></li>
 </ul>
             </nav>
         </div>
@@ -406,48 +407,67 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="create-a-cloud-function">
-<h1>Create a Cloud Function<a class="headerlink" href="#create-a-cloud-function" title="Permalink to this heading">#</a></h1>
-<p>Using the Google Cloud Shell as your development environment, you will create a Google Cloud Function that is triggered by an HTTP request.</p>
-<p>We will first run this function locally using the Google Cloud Functions Framework.</p>
-<section id="create-a-local-development-environment">
-<span id="gcf-local-createdevenvironment"></span><h2>Create a Local Development Environment<a class="headerlink" href="#create-a-local-development-environment" title="Permalink to this heading">#</a></h2>
-<p>Each Google Cloud Function is its own individual Node application. Create a <strong>local root folder</strong> inside your Google Cloud Shell in which you will develop your function.</p>
-<p>On the command line, enter the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="mi">41200</span>
-<span class="n">mkdir</span> <span class="n">gcf_hello_http</span>
-<span class="n">cd</span> <span class="n">gcf_hello_http</span>
-<span class="n">touch</span> <span class="n">index</span><span class="o">.</span><span class="n">js</span> <span class="o">.</span><span class="n">gitignore</span>
-</pre></div>
+  <section class="tex2jax_ignore mathjax_ignore" id="deploy-an-http-triggered-cloud-function">
+<h1>Deploy an HTTP-Triggered Cloud Function<a class="headerlink" href="#deploy-an-http-triggered-cloud-function" title="Permalink to this heading">#</a></h1>
+<p>Once you’ve used the Functions Framework to test the Cloud Function within your Cloud Shell, you can <em>deploy</em> your function to GCP.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must have already created a <a class="reference internal" href="../cloud_project/1_create_cloud_project.html#gcp-cloud-project-createcloudproject"><span class="std std-ref">Google Cloud Project</span></a> that is connected to a Billing Account before you deploy your Cloud Function!</p>
 </div>
-<p>Open the <code class="docutils literal notranslate"><span class="pre">gcf_hello_http</span></code> directory in the Cloud Shell editor.</p>
-<p>In the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file, input the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">node_modules</span>
-</pre></div>
-</div>
-<p>In the <code class="docutils literal notranslate"><span class="pre">index.js</span></code> file, input the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Create</span> <span class="n">a</span> <span class="n">basic</span> <span class="n">arrow</span> <span class="n">function</span>
-<span class="n">exports</span><span class="o">.</span><span class="n">hello</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;Hello, HTTP!&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>You now have a JavaScript module with one function exported. When you call your Cloud Function, you will specify which exported function should be invoked.</p>
+<section id="connect-your-cloud-shell-to-your-google-cloud-project">
+<span id="gcf-deploy-http-connect-cloud-project"></span><h2>Connect Your Cloud Shell to your Google Cloud Project<a class="headerlink" href="#connect-your-cloud-shell-to-your-google-cloud-project" title="Permalink to this heading">#</a></h2>
+<p>You must connect your Cloud Shell to your GCP project so that your Cloud Function is deployed and connected to the correct Billing Account.</p>
+<p>In the Cloud Shell terminal, do the following:</p>
+<ol class="arabic simple">
+<li><p>Use the Google Cloud Command Line Interface (gcloud CLI) to connect your terminal to the correct Cloud Project by entering <code class="docutils literal notranslate"><span class="pre">gcloud</span> <span class="pre">config</span> <span class="pre">set</span> <span class="pre">project</span> <span class="pre">project_name</span></code>. Replace <code class="docutils literal notranslate"><span class="pre">project_name</span></code> with the name of the correct GCP project.</p></li>
+<li><p>After pressing Enter, you may be asked to confirm your login. Follow the instructions provided in the terminal.</p></li>
+<li><p>Once your project is connected, the project name will appear in the terminal prompt in yellow text. This indicates that you are issuing commands to the GCP project that is displayed.</p></li>
+</ol>
 </section>
-<section id="install-the-functions-framework">
-<span id="gcf-local-functions-framework"></span><h2>Install the Functions Framework<a class="headerlink" href="#install-the-functions-framework" title="Permalink to this heading">#</a></h2>
-<p>The Functions Framework is a Node.js package that will allow you to run your Google Cloud Function locally (on your Cloud Shell) so that you can test your function prior to deployment.</p>
-<p>Install the Functions Framework by entering the following on the command line:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">install</span> <span class="o">--</span><span class="n">save</span><span class="o">-</span><span class="n">dev</span> <span class="nd">@google</span><span class="o">-</span><span class="n">cloud</span><span class="o">/</span><span class="n">functions</span><span class="o">-</span><span class="n">framework</span>
+<section id="deploy-the-cloud-function-to-the-gcp-project">
+<span id="gcf-deploy-http-deploy-function"></span><h2>Deploy the Cloud Function to the GCP Project<a class="headerlink" href="#deploy-the-cloud-function-to-the-gcp-project" title="Permalink to this heading">#</a></h2>
+<p>Once you have a project activated, you can issue commands to the project via the CLI. To deploy a Cloud Function, you will target the <code class="docutils literal notranslate"><span class="pre">functions</span></code> module.</p>
+<p>Navigate <strong>into</strong> the root directory for your Cloud Function (the directory that includes your <code class="docutils literal notranslate"><span class="pre">index.js</span></code> file).</p>
+<p>Prior to issuing the command, ensure you know the correct setting for each of the following arguments you must provide:</p>
+<ul class="simple">
+<li><p>Cloud Function name <em>(this is the name of the function in GCP, <strong>not</strong> the name of your local function exported by the module)</em></p></li>
+<li><p>runtime</p></li>
+<li><p>region</p></li>
+<li><p>entry-point <em>(this is the name of the function exported in the module that will be called when the Cloud Function is triggered)</em></p></li>
+</ul>
+<p>With that information in hand, issue the following command via the terminal, and insert your pre-determined argument values where appropriate:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gcloud</span> <span class="n">functions</span> <span class="n">deploy</span> <span class="n">hello_http</span> \
+  <span class="o">--</span><span class="n">runtime</span><span class="o">=</span><span class="n">nodejs18</span> \
+  <span class="o">--</span><span class="n">region</span><span class="o">=</span><span class="n">us</span><span class="o">-</span><span class="n">central1</span> \
+  <span class="o">--</span><span class="n">source</span><span class="o">=.</span> \
+  <span class="o">--</span><span class="n">entry</span><span class="o">-</span><span class="n">point</span><span class="o">=</span><span class="n">hello</span> \
+  <span class="o">--</span><span class="n">trigger</span><span class="o">-</span><span class="n">http</span> \
+  <span class="o">--</span><span class="n">allow</span><span class="o">-</span><span class="n">unauthenticated</span>
 </pre></div>
 </div>
+<p>The above statement will deploy a Cloud Function named <code class="docutils literal notranslate"><span class="pre">hello_http</span></code> on a Node.js runtime <code class="docutils literal notranslate"><span class="pre">nodejs18</span></code> in the <code class="docutils literal notranslate"><span class="pre">us-central1</span></code> region. The function will be triggered by an HTTP call and does not require authentication (it will be publicly available). When the Cloud Function is invoked, the <code class="docutils literal notranslate"><span class="pre">hello()</span></code> function exported in the module will be called first.</p>
 </section>
-<section id="invoke-the-function-locally">
-<span id="gcf-local-invoke-function-local-1"></span><h2>Invoke the Function Locally<a class="headerlink" href="#invoke-the-function-locally" title="Permalink to this heading">#</a></h2>
-<p>From the command line, use the Functions Framework to invoke your function locally. Enter the following on the command line:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_TARGET</span><span class="o">=</span><span class="n">hello</span> <span class="n">npx</span> <span class="nd">@google</span><span class="o">-</span><span class="n">cloud</span><span class="o">/</span><span class="n">functions</span><span class="o">-</span><span class="n">framework</span>
-</pre></div>
-</div>
-<p>The above command tells the Function Framework to invoke the <code class="docutils literal notranslate"><span class="pre">hello()</span></code> function. It knows to look for the function in a file named <code class="docutils literal notranslate"><span class="pre">index.js</span></code> by default.</p>
-<p>To see the function run, use the <strong>Web Preview</strong> button in Cloud Shell Editor to invoke the function. Note that the Cloud Shell terminal shows the output of your <code class="docutils literal notranslate"><span class="pre">console.log</span></code> statement.</p>
+<section id="enable-cloud-build-and-cloud-function-apis">
+<span id="gcf-deploy-http-enable-apis"></span><h2>Enable Cloud Build and Cloud Function APIs<a class="headerlink" href="#enable-cloud-build-and-cloud-function-apis" title="Permalink to this heading">#</a></h2>
+<p>If this is the first time you have deployed a Cloud Function in this GCP project, you will be prompted to enable both the Cloud Build and Cloud Function APIs. GCP APIs are disabled by default (to prevent accidental billing charges).</p>
+<p>You must enable both APIs for the deployment to proceed.</p>
+<p>If prompted, re-issue your <code class="docutils literal notranslate"><span class="pre">gcloud</span> <span class="pre">functions</span> <span class="pre">deploy...</span></code> command after the APIs are enabled.</p>
+</section>
+<section id="test-your-cloud-function-at-the-provided-url">
+<span id="gcf-deploy-http-test-function-url"></span><h2>Test Your Cloud Function at the Provided URL<a class="headerlink" href="#test-your-cloud-function-at-the-provided-url" title="Permalink to this heading">#</a></h2>
+<p>Once deployed, your Cloud Function will automatically create a <em>trigger URL</em>. This will be displayed in your terminal window as well as the Cloud Function’s detail page in the Cloud Console.</p>
+<p>Copy the trigger URL and paste it into a web browser window. If your Cloud Function depends on querystring values, be sure to manually append a querystring to the end of the URL.</p>
+<p>You should see the response from your Cloud Function in the browser window. Note, however, that the output from the <code class="docutils literal notranslate"><span class="pre">console.log()</span></code> statement <em>does not</em> appear in the Cloud Shell terminal.</p>
+</section>
+<section id="view-cloud-function-logs">
+<span id="gcf-deploy-http-view-logs"></span><h2>View Cloud Function Logs<a class="headerlink" href="#view-cloud-function-logs" title="Permalink to this heading">#</a></h2>
+<p>There are two ways to view the log statements generated by your Cloud Function: from the Cloud Function details page in Cloud Console, or via the <strong>Log Explorer</strong> tool. The details page is easiest for now.</p>
+<p>In <a class="reference external" href="https://console.cloud.google.com">Google Cloud Console</a>, ensure the correct GCP project is selected. Visit the dashboard for the project.</p>
+<p>From the hamburger menu at the top left, scroll to the <strong>SERVERLESS</strong> category and select <strong>Cloud Functions</strong>.</p>
+<p>You are presented with a list of all Cloud Functions deployed to this project. Click on the linked <code class="docutils literal notranslate"><span class="pre">hello_http</span></code> Cloud Function.</p>
+<p>Initially you are presented with a Metrics window that shows traffic for this Cloud Function. From the horizontal navigation, choose <strong>LOGS</strong>.</p>
+<p>The Logs for a specific time period are presented. The logs may need to be refreshed by using the refresh option in the top right of the Logs window.</p>
+<p>View the output of the log and ensure that you see the expected output from your Cloud Function.</p>
 </section>
 </section>
 
@@ -476,21 +496,25 @@ document.write(`
 
               
               
-              
-              
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="index.html"
+       href="2_test_http_function.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Google Cloud Functions</p>
+        <p class="prev-next-title">Test an HTTP-Triggered Cloud Function</p>
       </div>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -505,9 +529,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-local-development-environment">Create a Local Development Environment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-the-functions-framework">Install the Functions Framework</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#invoke-the-function-locally">Invoke the Function Locally</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-your-cloud-shell-to-your-google-cloud-project">Connect Your Cloud Shell to your Google Cloud Project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deploy-the-cloud-function-to-the-gcp-project">Deploy the Cloud Function to the GCP Project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-cloud-build-and-cloud-function-apis">Enable Cloud Build and Cloud Function APIs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-your-cloud-function-at-the-provided-url">Test Your Cloud Function at the Provided URL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#view-cloud-function-logs">View Cloud Function Logs</a></li>
 </ul>
   </nav></div>
 
@@ -555,8 +581,8 @@ By Rob Elliott
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
