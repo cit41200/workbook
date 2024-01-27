@@ -1,1 +1,0 @@
-# JavaScript Functions: 3 Ways
